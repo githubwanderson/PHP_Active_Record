@@ -3,7 +3,7 @@
     "description": "Activerecord",
     "autoload": {
         "psr-4": {
-            "WandersonMartinsMa\\Activerecord\\": "src/"
+            "app\\":"app"
         }
     },
     "authors": [
@@ -12,10 +12,5 @@
             "email": "wanderson.martins@magis5.com.br"
         }
     ],
-    "require": {},
-    "autoload": {
-        "psr-4": {
-            "app\\":"app"
-        }
-    }
+    "require": {} 
 }
