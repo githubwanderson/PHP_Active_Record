@@ -1,0 +1,21 @@
+{
+    "name": "wanderson.martins_ma/activerecord",
+    "description": "Activerecord",
+    "autoload": {
+        "psr-4": {
+            "WandersonMartinsMa\\Activerecord\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Wanderson",
+            "email": "wanderson.martins@magis5.com.br"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "app\\":"app"
+        }
+    }
+}
