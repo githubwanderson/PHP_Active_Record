@@ -3,9 +3,8 @@
 namespace app\database\activerecord;
 
 use app\database\interfaces\ActiveRecordInterface;
-use app\database\interfaces\InsertInterface;
+use app\database\interfaces\ActiveRecordExecuteInterface;
 use ReflectionClass;
-use app\database\interfaces\UpdateInterface;
 
 abstract class ActiveRecord implements ActiveRecordInterface
 {
@@ -40,14 +39,13 @@ abstract class ActiveRecord implements ActiveRecordInterface
         return $this->attributes[$attribute];
     }
 
-    public function update(UpdateInterface $updateInterface)
+    public function execute(ActiveRecordExecuteInterface $activeRecordExecuteInterface)
     {
-        return $updateInterface->update($this);
+        return $activeRecordExecuteInterface->execute($this);
     }
 
-    public function insert(InsertInterface $insertInterface)
+    public function insert()
     {
-        return $insertInterface->insert($this);
+        $this->execute(new Insert);
     }
-
 }

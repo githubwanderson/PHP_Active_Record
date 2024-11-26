@@ -4,5 +4,5 @@ namespace app\database\interfaces;
 
 interface UpdateInterface
 {
-    public function update(ActiveRecordInterface $activeRecordInterface);
+    public function update(ActiveRecordExecuteInterface $activeRecordExecuteInterface);
 }
