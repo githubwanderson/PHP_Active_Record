@@ -3,11 +3,11 @@
 namespace app\database\activerecord;
 
 use app\database\interfaces\ActiveRecordInterface;
-use app\database\interfaces\InsertInterface;
+use app\database\interfaces\ActiveRecordExecuteInterface;
 
-class Insert implements InsertInterface
+class Insert implements ActiveRecordExecuteInterface
 {
-    public function insert(ActiveRecordInterface $activeRecordInterface)
+    public function execute(ActiveRecordInterface $activeRecordInterface)
     {
         var_dump($activeRecordInterface->getAttributes());
         echo 'insert...';
