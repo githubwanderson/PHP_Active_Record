@@ -10,5 +10,6 @@ class Update implements UpdateInterface
     public function update(ActiveRecordInterface $activeRecordInterface)
     {
         var_dump($activeRecordInterface->getAttributes());
+        echo 'update...';
     }
 }
