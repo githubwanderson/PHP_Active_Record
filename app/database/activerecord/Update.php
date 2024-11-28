@@ -6,6 +6,7 @@ use app\database\interfaces\ActiveRecordInterface;
 use app\database\interfaces\ActiveRecordExecuteInterface;
 use Throwable;
 use app\database\connection\Connection;
+use Exception;
 
 class Update implements ActiveRecordExecuteInterface
 {
@@ -26,12 +27,11 @@ class Update implements ActiveRecordExecuteInterface
             $attributes = array_merge($activeRecordInterface->getAttributes(), [
                 $this->field => $this->value
             ]);
-
             $prepare = $connection->prepare($query);
             $prepare->execute($attributes);
             return $prepare->rowCount();          
         } catch (Throwable $th) {
-            var_dump($th->getMessage());
+            formatException($th);
         }
     }
 
