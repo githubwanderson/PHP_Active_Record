@@ -6,7 +6,6 @@ use app\database\interfaces\ActiveRecordInterface;
 use app\database\interfaces\ActiveRecordExecuteInterface;
 use Throwable;
 use app\database\connection\Connection;
-use Exception;
 
 class Update implements ActiveRecordExecuteInterface
 {
