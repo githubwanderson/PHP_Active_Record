@@ -16,7 +16,6 @@ abstract class ActiveRecord implements ActiveRecordInterface
         if(!$this->table){
             $this->table = strtolower((new ReflectionClass($this))->getShortName());
         }
-        var_dump($this->table);
     }
 
     public function getTable()
@@ -46,7 +45,7 @@ abstract class ActiveRecord implements ActiveRecordInterface
 
     public function insert()
     {
-        $this->execute(new Insert);
+        $this->execute(new Insert());
     }
 
     public function update($field,$value)
