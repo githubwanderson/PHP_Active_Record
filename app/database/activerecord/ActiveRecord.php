@@ -45,16 +45,21 @@ abstract class ActiveRecord implements ActiveRecordInterface
 
     public function insert()
     {
-        $this->execute(new Insert());
+        return $this->execute(new Insert());
     }
 
     public function update($field,$value)
     {
-        $this->execute(new Update($field,$value));
+        return $this->execute(new Update($field,$value));
+    }
+
+    public function delete($field,$value)
+    {
+        return $this->execute(new Delete($field,$value));
     }
 
     public function find()
     {
-        $this->execute(new Find);
+        return $this->execute(new Find);
     }
 }
