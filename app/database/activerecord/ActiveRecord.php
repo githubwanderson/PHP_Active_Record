@@ -58,8 +58,9 @@ abstract class ActiveRecord implements ActiveRecordInterface
         return $this->execute(new Delete($field,$value));
     }
 
-    public function find()
+    public function findBy($field,$value)
     {
-        return $this->execute(new Find);
+        return $this->execute(new FindBy($field,$value));
+
     }
 }
