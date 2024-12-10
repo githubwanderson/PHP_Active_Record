@@ -61,6 +61,10 @@ abstract class ActiveRecord implements ActiveRecordInterface
     public function findBy($field,$value)
     {
         return $this->execute(new FindBy($field,$value));
+    }
 
+    public function findAll($where = [], $limit = "", $offset = "", $fields = '*')
+    {
+        return $this->execute(new FindAll($where, $limit, $offset, $fields));
     }
 }
